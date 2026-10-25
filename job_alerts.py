@@ -7,12 +7,21 @@ import json, os, re, sys, urllib.request, urllib.parse
 # ---------- EDIT THIS SECTION ----------
 # Open the company's careers page; if the URL looks like one of the patterns
 # below, copy the name out of it.
-GREENHOUSE = []   # boards.greenhouse.io/<name>      e.g. ["postman"]
-LEVER      = []   # jobs.lever.co/<name>             e.g. ["paytm"]
+GREENHOUSE = ["postman", "databricks", "cloudflare", "mongodb", "twilio", "okta"]
+LEVER      = ["cred", "palantir"]
 WORKDAY = [
-    # {"name": "Company", "host": "xyz.wd3.myworkdayjobs.com",
-    #  "tenant": "xyz", "site": "SiteName"}
-    # Find these in the careers URL: https://<host>/<site>/...
+    {"name": "Mastercard", "host": "mastercard.wd1.myworkdayjobs.com",
+     "tenant": "mastercard", "site": "CorporateCareers"},
+    {"name": "NVIDIA", "host": "nvidia.wd5.myworkdayjobs.com",
+     "tenant": "nvidia", "site": "NVIDIAExternalCareerSite"},
+    {"name": "Adobe", "host": "adobe.wd5.myworkdayjobs.com",
+     "tenant": "adobe", "site": "external_experienced"},
+    {"name": "Salesforce", "host": "salesforce.wd12.myworkdayjobs.com",
+     "tenant": "salesforce", "site": "External_Career_Site"},
+    {"name": "Dell", "host": "dell.wd1.myworkdayjobs.com",
+     "tenant": "dell", "site": "External"},
+    {"name": "Wells Fargo", "host": "wf.wd1.myworkdayjobs.com",
+     "tenant": "wf", "site": "WellsFargoJobs"},
 ]
 LOCATIONS = ["pune", "hyderabad", "bengaluru", "bangalore", "nagpur", "remote", "india"]
 INCLUDE   = ["fresher", "graduate", "trainee", "associate", "entry", "campus",
